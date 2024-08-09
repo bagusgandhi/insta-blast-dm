@@ -1,0 +1,5 @@
+.env
+cookies*
+hentek_blast.db
+__pycache__/
+assets/screenshot*
