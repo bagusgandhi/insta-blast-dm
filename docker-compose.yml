@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  selenium:
+    # platform: linux/x86_64
+    image: selenium/standalone-chrome:latest
+    container_name: selenium
+    ports:
+      - "4444:4444"
+    shm_size: 2gb
+    restart: unless-stopped
+    networks:
+      - insta-network  # Connect the selenium service to the custom network
+
+  insta-blast:
+    container_name: insta-blast
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    networks:
+      - insta-network  # Connect the insta-blast service to the custom network
+
+# Define the custom network
+networks:
+  insta-network:
+    driver: bridge
