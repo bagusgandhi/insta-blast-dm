@@ -1,7 +1,7 @@
 # Insta Blast DM
 
 ### Overview
-This project is a Python application that uses SQLite for database management. Ensure your machine have chromedriver for selenium to drive it. It includes a Docker setup for containerized deployment.
+This project Instagram blast DM that build with Python. Ensure your machine have chromedriver for selenium to drive it. It includes a Docker setup for containerized deployment.
 
 ### Prerequisites
 Before you begin, ensure you have the following installed:
