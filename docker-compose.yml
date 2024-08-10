@@ -3,11 +3,13 @@ version: '3'
 services:
   selenium:
     # platform: linux/x86_64
-    image: selenium/standalone-chrome:latest
-    container_name: selenium
+    image: selenium/standalone-chrome
     ports:
       - "4444:4444"
-    shm_size: 2gb
+    volumes:
+      - "/dev/shm:/dev/shm"
+    container_name: selenium
+    # shm_size: 2gb
     restart: unless-stopped
     networks:
       - insta-network  # Connect the selenium service to the custom network
